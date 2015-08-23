@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'News');
+$this->title = Yii::t('app', 'Новости');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create News'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Создать новость'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id_new',
             'title_new',
-            'content_new:ntext',
+            //'content_new:ntext',
             'preview_new:ntext',
             'data_new',
             // 'smallimg_new',

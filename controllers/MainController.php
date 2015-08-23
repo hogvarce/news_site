@@ -17,10 +17,10 @@ class MainController extends \yii\web\Controller
   {
       $page = Pages::findOne([
           'slug' => Yii::$app->request->url,
-        ]);
-        $news = new ActiveDataProvider([
-            'query' => News::find(),
-        ]);
+      ]);
+      $news = new ActiveDataProvider([
+          'query' => News::find(),
+      ]);
 
       if ($page == null) {
             return $this->render('error');
@@ -29,6 +29,16 @@ class MainController extends \yii\web\Controller
           'page' => $page,
           'news' => $news,
       ]);
+  }
+
+  public function actionNew($id)
+  {
+    $new = News::findOne([
+        'id_new' => $id,
+    ]);
+      return $this->render('new', [
+          'new' => $new,
+        ]);
   }
 
 

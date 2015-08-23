@@ -48,7 +48,7 @@ class News extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_new' => 'Id New',
+            'id_new' => 'Id новости',
             'title_new' => 'Заголовок новости',
             'content_new' => 'Основной контент новости',
             'preview_new' => 'Краткий текст новости',

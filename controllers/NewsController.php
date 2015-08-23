@@ -117,11 +117,12 @@ class NewsController extends Controller
     {
         if (!\Yii::$app->user->isGuest) {
           $model = new News();
-
+          $max = NewsSearch::find()->select('max(id_new)')->scalar()+1;
           if ($model->load(Yii::$app->request->post())) {
-              $model->file = UploadedFile::getInstance($model, 'file');
-              $model->file->saveAs('/images/'.$model->title_new.'.'.$model->file->extension);
-              $model->smallimg_new = '/images/'.$model->title_new.'.'.$model->file->extension;
+              if ( $model->file = UploadedFile::getInstance($model, 'file') ){
+                $model->file->saveAs('images/new-'.$max.'.'.$model->file->extension);
+                $model->smallimg_new = '/images/new-'.$max.'.'.$model->file->extension;
+              }
               $model->save();
               return $this->redirect(['view', 'id' => $model->id_new]);
           } else {
@@ -158,9 +159,10 @@ class NewsController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->file = UploadedFile::getInstance($model, 'file');
-            $model->file->saveAs('/images/'.$model->title_new.'.'.$model->file->extension);
-            $model->smallimg_new = '/images/'.$model->title_new.'.'.$model->file->extension;
+            if ( $model->file = UploadedFile::getInstance($model, 'file') ){
+              $model->file->saveAs('images/new-'.$model->id_new.'.'.$model->file->extension);
+              $model->smallimg_new = '/images/new-'.$model->id_new.'.'.$model->file->extension;
+            }
             $model->save();
             return $this->redirect(['view', 'id' => $model->id_new]);
         } else {

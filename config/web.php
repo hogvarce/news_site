@@ -20,6 +20,8 @@ $config = [
             'rules' => [
               '<constoller:(admin)>' => 'admin/index',
               '<constoller:(news)>' => 'news/index',
+              '<constoller:(new)>' => 'main/new',
+              '<constoller:(new)>/<id:\w+>' => 'main/new',
               '<constoller:[a-zA-Z0-9-]+>' => 'main/index',
             ],
         ],
