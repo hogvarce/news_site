@@ -10,6 +10,11 @@ $config = [
     'layout' => 'news',
     'language' => 'ru-RU',
     'sourceLanguage' => 'ru-RU',
+    // 'modules' => [
+    //     'admin' => [
+    //         'class' => 'app\modules\Admin',
+    //     ]
+    // ],
     'components' => [
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
@@ -22,7 +27,7 @@ $config = [
               '<constoller:(news)>' => 'news/index',
               '<constoller:(new)>' => 'main/new',
               '<constoller:(new)>/<id:\w+>' => 'main/new',
-              '<constoller:[a-zA-Z0-9-]+>' => 'main/index',
+              '<constoller:\w+>' => 'main/index',
             ],
         ],
         'request' => [
