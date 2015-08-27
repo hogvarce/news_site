@@ -23,11 +23,12 @@ $config = [
             // Disable r= routes
             'enablePrettyUrl' => true,
             'rules' => [
-              '<constoller:(admin)>' => 'admin/index',
-              '<constoller:(news)>' => 'news/index',
-              '<constoller:(new)>' => 'main/new',
-              '<constoller:(new)>/<id:\w+>' => 'main/new',
-              '<constoller:\w+>' => 'main/index',
+              'admin' => 'admin/index',
+              'news' => 'news/index',
+              'new' => 'main/new',
+              'new/<id:\w+>' => 'main/new',
+              'main' => 'main/index',
+              '<view:[\w]+>' => 'main/page',
             ],
         ],
         'request' => [

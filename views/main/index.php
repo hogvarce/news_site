@@ -14,16 +14,15 @@
       //         'model' => $model
       //     ]);
       // }
-      $news->pagination = [
-          'defaultPageSize' => 3,
-          'pageSizeLimit' => [3, 100],
-          'pageParam' => 'pageNum',
-          'forcePageParam' => false,
-      ];
+      // $news->pagination = [
+      //   'pageSize' => 2,
+      //   'validatePage' => false,
+      // ];
       ?>
       <?= ListView::widget([
           'dataProvider' => $news,
           'itemView' => 'shortNew',
+        //  'pager' => ['class' => \kop\y2sp\ScrollPager::className()]
         ])
         ?>
     </div>

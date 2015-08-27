@@ -21,6 +21,7 @@ class AdminController extends Controller
     public function behaviors()
     {
         return [
+          
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
