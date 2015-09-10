@@ -2,24 +2,15 @@
   "name": "news_site",
   "version": "1.0.0",
   "description": "news site",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hogvarce/news_site.git"
   },
-  "keywords": [
-    "gulp"
-  ],
-  "author": "Ganzhrnko",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hogvarce/news_site/issues"
-  },
-  "homepage": "http://xn----ctbdenjstj3dug.xn--p1ai/"
+  "author": "Ganzhenko",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.6"
+  }
 }
